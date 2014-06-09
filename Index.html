@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Restaurant Project</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/main.css" rel="stylesheet">
+     
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="jumbotron" style="background: url(Images/blur_img1.jpg) no-repeat center center;">
+          <h1>International Cuisine</h1>
+              
+        </div>
+      
+        <!-- Default panel contents -->
+        
+            
+        <div class="container">
+          <h2 id="panel-heading">Restaurants</h2>
+         <select id="restaurants">
+           <option value="Select Restaurant">Select Restaurant</option>
+            <option value="Pizza Planet">Pizza Planet</option>
+            <option value="Happy Burger">Happy Burger</option>
+              <option value="Chavez Burrito">Chavez Burrito</option>
+             <option value="Erin's Deli">Erin's Deli</option>
+        </select>  
+
+        <form id="Select Restaurant">
+        </form>
+        
+         
+      
+        <form id="Pizza">
+          
+           <div> <input type="checkbox" name="checkboxlist"/>   Pepperoni Pizza</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Hawaiian Pizza</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Combination Pizza</div> 
+      
+        </form>
+
+          <form id="Burger">
+            <div> <input type="checkbox" name="checkboxlist"/>   Big Burger</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Cheese Burger</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Bacon Burger</div> 
+           </form>
+
+          <form id="Burrito">
+             <div> <input type="checkbox" name="checkboxlist"/>   Beef Burrito</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Chicken Burrito</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Pork Burrito</div> 
+            </form>
+
+            <form id="Sandwich">
+             <div> <input type="checkbox" name="checkboxlist"/>   Turkey Sandwich</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Ham Sandwich</div>
+           <div> <input type="checkbox" name="checkboxlist"/>   Salame Sandwich</div> 
+            </form>
+        
+        <button id="target">Submit</button>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+
+    <script>
+
+$("document").ready(function() {
+    $('#restaurants').change(function() {
+      if ($(this).val() == "Select Restaurant") {
+            $('#Select Restaurant').hide();
+        }
+        if ($(this).val() == "Pizza Planet") {
+            $('#Pizza').show();
+        } else {
+            $('#Pizza').hide();
+        }
+                if ($(this).val() == "Happy Burger") {
+            $('#Burger').show();
+        } else {
+            $('#Burger').hide();
+        }
+                  if ($(this).val() == "Chavez Burrito") {
+            $('#Burrito').show();
+        } else {
+            $('#Burrito').hide();
+        }
+         if ($(this).val() == "Erin's Deli") {
+            $('#Sandwich').show();
+        } else {
+            $('#Sandwich').hide();
+        }
+    });
+});
+  $(document).ready(function() {
+  $('#target').click(function () {
+    var checkValues = $('input[name=checkboxlist]:checked').map(function() {
+        return $(this).parent().text();
+    }).get();
+      alert(checkValues);
+  });
+});
+
+
+
+
+</script>
+
+
+
+  </body>
+</html>
